@@ -99,6 +99,16 @@
   cursor: default;
 }
 
+.header .notifications-list-mobile {
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  height: 100%;
+  display: none;
+  width: initial;
+}
+
 .header .notifications-list .notifications-list-header,
 .header .notifications-list .notifications-list-footer {
   padding: 10px 20px;
@@ -142,8 +152,51 @@
   border-left: 3px solid var(--primary);
 }
 
+.header .notifications-list-mobile .notifications-list-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header .user-menu-container {
+  position: relative;
+}
+
+.header .user-menu-container i {
+  cursor: pointer;
+}
+
+.header .user-menu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  z-index: 50;
+  width: 100px;
+  background-color: var(--background-1);
+  box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 3px;
+  cursor: default;
+  padding: 10px 20px;
+}
+
+.header .user-menu ul {
+  list-style: none;
+}
+
+.header .user-menu li {
+  text-align: right;
+}
+
+.header .user-menu a {
+  cursor: pointer;
+}
+
 @media screen and (max-width: 979px) { /* TABLET */
-  /* .header .notifications-list {
-    width: 100vw;
-  } */
+  .header .notifications-list {
+    display: none;
+  }
+
+  .header .notifications-list.notifications-list-mobile {
+    display: initial;
+  }
 }

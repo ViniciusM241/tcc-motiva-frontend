@@ -7,7 +7,15 @@ document.addEventListener('DOMContentLoaded', () => {
   const notificationsList = document.getElementById('notificationsList');
   const notificationListCount = document.getElementById('notificationListCount');
   const notificationListContent = document.getElementById('notificationListContent');
+  const notificationsListMobile = document.getElementById('notificationsListMobile');
+  const notificationListCountMobile = document.getElementById('notificationListCountMobile');
+  const notificationListContentMobile = document.getElementById('notificationListContentMobile');
+  const closeNotificationsMobile = document.getElementById('closeNotificationsMobile');
   const viewAll = document.getElementById('viewAll');
+  const viewAllMobile = document.getElementById('viewAllMobile');
+  const userMenu = document.getElementById('userMenu');
+  const userMenuWrapper = document.getElementById('userMenuWrapper');
+  const btnLogout = document.getElementById('btnLogout');
   const nav = document.getElementById('nav');
   const navLinks = [...nav.querySelectorAll('a')];
 
@@ -24,10 +32,34 @@ document.addEventListener('DOMContentLoaded', () => {
   notifications.addEventListener('click', (e) => {
     e.stopPropagation();
 
+    if (!userMenuWrapper.classList.contains('d-none')) {
+      userMenuWrapper.classList.add('d-none');
+    }
+
     if (notificationsList.classList.contains('d-none')) {
       notificationsList.classList.remove('d-none');
     } else {
       notificationsList.classList.add('d-none');
+    }
+
+    if (notificationsListMobile.classList.contains('d-none')) {
+      notificationsListMobile.classList.remove('d-none');
+    } else {
+      notificationsListMobile.classList.add('d-none');
+    }
+  });
+
+  userMenu.addEventListener('click', (e) => {
+    e.stopPropagation();
+
+    if (!notificationsList.classList.contains('d-none')) {
+      notificationsList.classList.add('d-none');
+    }
+
+    if (userMenuWrapper.classList.contains('d-none')) {
+      userMenuWrapper.classList.remove('d-none');
+    } else {
+      userMenuWrapper.classList.add('d-none');
     }
   });
 
@@ -35,6 +67,14 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!notificationsList.classList.contains('d-none')) {
       notificationsList.classList.add('d-none');
     }
+
+    if (!userMenuWrapper.classList.contains('d-none')) {
+      userMenuWrapper.classList.add('d-none');
+    }
+  });
+
+  closeNotificationsMobile.addEventListener('click', () => {
+    notificationsListMobile.classList.add('d-none');
   });
 
   lockScreen();
@@ -73,29 +113,37 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const handleNotifications = (notifications) => {
     notificationListContent.innerHTML = '';
+    notificationListContentMobile.innerHTML = '';
 
     if (notifications.length) {
       const notViewed = notifications.filter(x => !x.viewed);
 
       notificationsCount.innerText = notViewed.length;
       notificationListCount.innerText = notifications.length;
+      notificationListCountMobile.innerText = notifications.length;
 
       if (notViewed.length) {
         notificationsCount.classList.remove('d-none');
+      } else {
+        notificationsCount.classList.add('d-none');
       }
 
       notifications.forEach(notificationInfo => {
         const notification = createNotification(notificationInfo);
+        const notificationsMobile = createNotification(notificationInfo);
 
         notificationListContent.appendChild(notification);
+        notificationListContentMobile.appendChild(notificationsMobile);
       });
 
       if (notViewed.length) {
         viewAll.classList.remove('d-none');
-        viewAll.addEventListener('click', (e) => {
-          e.preventDefault();
+        viewAllMobile.classList.remove('d-none');
 
+        const viewAllRequest = () => {
           notifications.forEach(notification => {
+            if (notification.viewed) return;
+
             request({
               config: {
                 url: `/admins/${notification.adminId}/notifications/${notification.id}`,
@@ -103,15 +151,31 @@ document.addEventListener('DOMContentLoaded', () => {
               },
             });
           });
+        };
+
+        viewAll.addEventListener('click', (e) => {
+          e.preventDefault();
+          viewAllRequest();
+        });
+
+        viewAllMobile.addEventListener('click', (e) => {
+          e.preventDefault();
+          viewAllRequest();
         });
       } else {
         viewAll.classList.add('d-none');
+        viewAllMobile.classList.add('d-none');
       }
 
     } else {
       notificationsCount.classList.add('d-none');
     }
   };
+
+  btnLogout.addEventListener('click', () => {
+    removeToken();
+    window.location.href = '/login';
+  });
 });
 
 function createNotification(notification) {

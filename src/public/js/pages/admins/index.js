@@ -96,6 +96,7 @@ document.addEventListener('DOMContentLoaded', () => {
               form.name.value = data.name;
               form.password.value = data.authToken;
               form.confirmPassword.value = data.authToken;
+              form.email.disabled = true;
 
               modalForm('Editar usuário Admin', form, (formE, modal) => {
                 const errorsPanel = document.getElementById('errorsPanel');
@@ -118,6 +119,11 @@ document.addEventListener('DOMContentLoaded', () => {
                   },
                   onSuccess: (res) => {
                     releaseScreen();
+
+                    if (res.status === 400) {
+                      errorsPanel.innerText = 'E-mail já cadastrado. Tente outro';
+                      return;
+                    }
 
                     if (res.status !== 200) {
                       errorsPanel.innerText = 'Erro inesperado, tente novamente mais tarde';
@@ -179,6 +185,7 @@ document.addEventListener('DOMContentLoaded', () => {
     form.name.value = '';
     form.password.value = '';
     form.confirmPassword.value = '';
+    form.email.disabled = false;
 
     modalForm('Adicionar usuário Admin', form, (formE, modal) => {
       const errorsPanel = document.getElementById('errorsPanel');
@@ -201,6 +208,11 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         onSuccess: (res) => {
           releaseScreen();
+
+          if (res.status === 400) {
+            errorsPanel.innerText = 'E-mail já cadastrado. Tente outro';
+            return;
+          }
 
           if (res.status !== 201) {
             errorsPanel.innerText = 'Erro inesperado, tente novamente mais tarde';

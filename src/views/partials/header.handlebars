@@ -25,7 +25,16 @@
           </div>
         </div>
         <p id="userNameLabel" class="p2 hide-on-mobile hide-on-tablet"></p>
-        <i class="icon icon-account-circle icon-40"></i>
+        <div class="user-menu-container">
+          <i id="userMenu" class="icon icon-account-circle icon-40"></i>
+          <div id="userMenuWrapper" class="user-menu d-none">
+            <ul>
+              <li>
+                <a id="btnLogout">Sair</a>
+              </li>
+            </ul>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -49,6 +58,16 @@
           </ul>
         </div>
       </div>
+    </div>
+  </div>
+  <div id="notificationsListMobile" class="notifications-list notifications-list-mobile d-none">
+    <div class="notifications-list-header">
+      <p class="p1">Notificações (<span id="notificationListCountMobile">0</span>)</p>
+      <i id="closeNotificationsMobile" class="icon icon-close icon-28"></i>
+    </div>
+    <div id="notificationListContentMobile" class="notifications-list-content"></div>
+    <div class="notifications-list-footer">
+      <a id="viewAllMobile" class="p3 d-none">Visualizar todas</a>
     </div>
   </div>
 </div>

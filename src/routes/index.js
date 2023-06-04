@@ -3,7 +3,7 @@ const router = express.Router();
 const context = require('../utils/getContext');
 const homeController = require('../controllers/home');
 
-router.get('/');
+router.get('/', homeController);
 router.get('/login', (_, res) => res.render('login', { layout: false, context: context() }));
 router.get('/home', homeController);
 router.get('/usuarios', (_, res) => res.render('users', { context: context() }));

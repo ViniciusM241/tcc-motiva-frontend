@@ -10,6 +10,27 @@
   <link rel="manifest" href="{{context.baseURL}}/assets/manifest.json">
 </head>
 <body>
-  <h1>500 - Erro inesperado</h1>
+  <div class="content">
+    <div>
+      {{> headerEmpty}}
+      <div class="container">
+        <div class="row mt-130">
+          <div class="col-2 col-md-0 col-sm-0"></div>
+          <div class="col-8 justify-center">
+            <h1 class="h0 w-100 text-center text-primary"><span style="font-weight: 300;">-</span> 500 <span style="font-weight: 300;">-</span></h1>
+            <h2 class="h2 mt-15">Um erro inesperado ocorreu</h2>
+            <div class="d-flex d-column w-100 justify-center">
+              <p class="p2 w-100">
+                Caso o erro continue acontecendo, entre em contato com o suporte através do e-mail <a href="mailto:suporte@motiviva.com.br">suporte@motiviva.com.br</a>
+              </p>
+              <a href="{{context.baseURL}}/home" class="text-center p2 mt-10">Voltar para a home</a>
+            </div>
+          </div>
+          <div class="col-2 col-md-0 col-sm-0"></div>
+        </div>
+      </div>
+    </div>
+    {{> footer}}
+  </div>
 </body>
 </html>

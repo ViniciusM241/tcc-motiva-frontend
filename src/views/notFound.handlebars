@@ -10,6 +10,24 @@
   <link rel="manifest" href="{{context.baseURL}}/assets/manifest.json">
 </head>
 <body>
-  <h1>404 - NOT FOUND</h1>
+  <div class="content">
+    <div>
+      {{> headerEmpty}}
+      <div class="container">
+        <div class="row mt-130">
+          <div class="col-2 col-md-0 col-sm-0"></div>
+          <div class="col-8 justify-center">
+            <h1 class="h0 w-100 text-center text-primary"><span style="font-weight: 300;">-</span>404<span style="font-weight: 300;">-</span></h1>
+            <h2 class="h2 mt-15">Página não encontrada</h2>
+            <div class="d-flex w-100 justify-center">
+              <a href="{{context.baseURL}}/home" class="text-center p2 mt-10">Voltar para a home</a>
+            </div>
+          </div>
+          <div class="col-2 col-md-0 col-sm-0"></div>
+        </div>
+      </div>
+    </div>
+    {{> footer}}
+  </div>
 </body>
 </html>
