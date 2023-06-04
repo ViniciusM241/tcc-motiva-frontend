@@ -1,0 +1,54 @@
+<link rel="stylesheet" href="{{context.baseURL}}/assets/css/partials/header.css">
+<div class="header mb-55">
+  <div class="container">
+    <div class="row first-block">
+      <div class="col-2 col-md-4">
+        <div class="icon">
+          <a href="{{baseURL}}/home">
+            <img src="{{context.baseURL}}/assets/images/logo.png" alt="Imagem de Bob" class="mr-5">
+          </a>
+          MotiViva
+        </div>
+      </div>
+      <div class="col-10 col-md-4 col-sm-2 align-center justify-end">
+        <div id="notifications" class="bell-wrapper mr-25">
+          <i class="icon icon-notification icon-24"></i>
+          <div id="notificationsCount" class="bell-count d-none">5</div>
+          <div id="notificationsList" class="notifications-list d-none">
+            <div class="notifications-list-header">
+              <p class="p1">Notificações (<span id="notificationListCount">0</span>)</p>
+            </div>
+            <div id="notificationListContent" class="notifications-list-content"></div>
+            <div class="notifications-list-footer">
+              <a id="viewAll" class="p3 d-none">Visualizar todas</a>
+            </div>
+          </div>
+        </div>
+        <p id="userNameLabel" class="p2 hide-on-mobile hide-on-tablet"></p>
+        <i class="icon icon-account-circle icon-40"></i>
+      </div>
+    </div>
+  </div>
+  <div class="second-block">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <ul id="nav" class="nav">
+            <li class="mr-50">
+              <a href="{{baseURL}}/home">Home</a>
+            </li>
+            <li class="mr-50">
+              <a href="{{baseURL}}/usuarios">Usuários</a>
+            </li>
+            <li class="mr-50">
+              <a href="{{baseURL}}/admins">Admins</a>
+            </li>
+            <li class="mr-50">
+              <a href="{{baseURL}}/frases">Frases</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

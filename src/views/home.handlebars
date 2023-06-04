@@ -1,0 +1,58 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12 justify-end align-center">
+      <span class="p1 text-bold mr-15">Filtros:</span>
+      <select name="month" id="month">
+        {{#each months as | month |}}
+        <option value="{{value}}" {{#if selected}}selected{{/if}}>{{label}}</option>
+        {{/each}}
+      </select>
+      <select name="year" id="year">
+        {{#each years as | year |}}
+        <option value="{{value}}" {{#if selected}}selected{{/if}}>{{label}}</option>
+        {{/each}}
+      </select>
+    </div>
+  </div>
+
+  <div class="row mt-15" style="row-gap: 48px;">
+    <div class="col-4 col-md-8 col-sm-4">
+      <div class="card card-color-1">
+        <p class="card-title">Quantidade de usuários ativos</p>
+        <p id="totalActiveUsers" class="card-value">000</p>
+      </div>
+    </div>
+    <div class="col-4 col-md-8 col-sm-4">
+      <div class="card card-color-2">
+        <p class="card-title">Novos usuários</p>
+        <p id="newUsers" class="card-value">000</p>
+      </div>
+    </div>
+    <div class="col-4 col-md-8 col-sm-4 hide-on-tablet hide-on-mobile" style="position: relative;">
+      <div class="card card-large" style="position: absolute;">
+        <p class="card-title">Ranking de avaliações</p>
+        <div class="card-content"></div>
+      </div>
+    </div>
+    <div class="col-4 col-md-8 col-sm-4">
+      <div class="card card-color-3">
+        <p class="card-title">Avaliações recebidas</p>
+        <p id="newEvaluations" class="card-value">000</p>
+      </div>
+    </div>
+    <div class="col-4 col-md-8 col-sm-4">
+      <div class="card card-color-4">
+        <p class="card-title">Média de avaliações</p>
+        <p id="evaluationsAvarage" class="card-value">0.0</p>
+      </div>
+    </div>
+    <div class="col-4 col-md-8 col-sm-4 hide-on-desktop">
+      <div class="card card-large">
+        <p class="card-title">Ranking de avaliações</p>
+        <div class="card-content"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript" src="{{context.baseURL}}/assets/js/pages/home/index.js"></script>

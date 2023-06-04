@@ -1,0 +1,18 @@
+.footer {
+  width: 100%;
+  height: 112px;
+  background-color: var(--background-dark);
+}
+
+.footer a {
+  color: var(--neutral-2);
+  text-decoration: none;
+  font-size: 15px;
+  transition: all .2s ease;
+}
+
+.footer a:hover {
+  color: var(--background-1);
+  opacity: .7;
+  text-decoration: underline;
+}
