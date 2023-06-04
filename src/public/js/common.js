@@ -216,6 +216,7 @@ function modalInfo(title, info, cb) {
   modal.appendChild(modalHead);
   modal.appendChild(modalFooter);
   modalContainer.appendChild(modal);
+  modalContainer.style.height = document.body.clientHeight + 'px';
   document.body.appendChild(modalContainer);
 
   const modalConfig = {
@@ -271,6 +272,7 @@ function modalConfirm(title, info, cbConfirm, cbCancel) {
   modal.appendChild(modalHead);
   modal.appendChild(modalFooter);
   modalContainer.appendChild(modal);
+  modalContainer.style.height = document.body.clientHeight + 'px';
   document.body.appendChild(modalContainer);
 
   const modalConfig = {
@@ -328,6 +330,7 @@ function modalForm(title, form, cb) {
   modal.appendChild(modalHead);
   modal.appendChild(modalFooter);
   modalContainer.appendChild(modal);
+  modalContainer.style.height = document.body.clientHeight + 'px';
   document.body.appendChild(modalContainer);
 
   const modalConfig = {
@@ -410,5 +413,6 @@ function modalChat(chat) {
   modal.appendChild(close);
   modal.appendChild(modalChatContainer);
   modalContainer.appendChild(modal);
+  modalContainer.style.height = document.body.clientHeight + 'px';
   document.body.appendChild(modalContainer);
 }

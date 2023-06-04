@@ -55,6 +55,7 @@ function request({
 function lockScreen() {
   const div = document.createElement('div');
   div.classList.add('load-content');
+  div.style.height = document.body.clientHeight + 'px';
 
   document.body.appendChild(div);
 }

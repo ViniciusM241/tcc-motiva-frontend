@@ -1,0 +1,28 @@
+<div class="container">
+  <div class="row mb-20">
+    <div class="col-6 col-md-8">
+      <h1 class="h2">Frases disponíveis no Pensador</h1>
+    </div>
+    <div class="col-6 col-md-8 justify-end align-end">
+      <a class="text-neutral" href="{{context.baseURL}}/frases">Ver frases do Sistema</a>
+    </div>
+  </div>
+  <div class="row mb-10">
+    <div class="col-12">
+      <input class="input-large" type="text" name="term" id="term" placeholder="Pesquise um termo aqui...">
+    </div>
+  </div>
+  <div class="row mb-10">
+    <div class="col-12">
+      <p class="p3 text-medium w-100 mb-10 d-none"><span id="phrasesCount">0</span> resultados</p>
+    </div>
+  </div>
+  <div id="phrasesBase" class="row"></div>
+  <div class="row mt-20">
+    <div class="col-12 justify-center">
+      <button id="btnMore" class="btn btn-primary d-none">Ver mais</button>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript" src="{{context.baseURL}}/assets/js/pages/phrases/pensador.js"></script>

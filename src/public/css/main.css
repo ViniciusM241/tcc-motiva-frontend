@@ -225,6 +225,14 @@
 .text-neutral-2 {color: var(--neutral-2);}
 .text-primary {color: var(--primary);}
 
+a {
+  transition: all .2s ease;
+}
+
+a:hover {
+  color: var(--primary);
+}
+
 i {display: flex !important;}
 [class*="icon-"]::after {
   content: '';
@@ -353,6 +361,7 @@ i {display: flex !important;}
   margin-top: 20px;
   font-size: 18px;
   font-weight: 400;
+  min-height: 400px;
 }
 
 .modal-container .modal-footer {
@@ -437,6 +446,20 @@ i {display: flex !important;}
   font-size: 15px;
 }
 
+.input-wrapper textarea {
+  width: 100%;
+  min-height: 127px;
+  padding: 10px;
+  border-radius: 5px;
+  margin-top: 5px;
+  background-color: var(--background-4);
+  color: var(--neutral);
+  border: 1px solid transparent;
+  outline-color: var(--primary-light);
+  font-size: 15px;
+  resize: vertical;
+}
+
 .input-wrapper input::placeholder {
   color: var(--neutral-2);
 }
@@ -473,6 +496,13 @@ i {display: flex !important;}
   font-size: 10px;
   font-weight: 500;
   padding: 1px 5px;
+  min-width: initial;
+}
+
+.btn.btn-min {
+  font-weight: 500;
+  padding-right: 5px;
+  padding-left: 5px;
   min-width: initial;
 }
 
@@ -532,6 +562,13 @@ select {
   overflow-y: scroll;
 }
 
+.card.card-min {
+  height: initial;
+  min-height: 130px;
+  overflow-y: scroll;
+  padding: 5px;
+}
+
 .card.card-color-1 {border-color: var(--color-1);}
 .card.card-color-2 {border-color: var(--color-2);}
 .card.card-color-3 {border-color: var(--color-3);}
@@ -587,6 +624,11 @@ select {
   font-size: 100px;
   color: var(--primary-light);
   font-weight: 700;
+}
+
+.card.card-min .card-phrase {
+  padding-top: 5px;
+  border: none;
 }
 
 table {
@@ -663,6 +705,17 @@ tbody td {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+}
+
+.input-large {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: var(--background-4);
+  color: var(--neutral);
+  border: 1px solid transparent;
+  outline-color: var(--primary-light);
+  font-size: 15px;
 }
 
 .hide-on-desktop {display: none;}
