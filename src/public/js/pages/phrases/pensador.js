@@ -113,7 +113,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 return;
               }
 
-              if (res.status !== 200) {
+              if (res.status !== 201) {
                 errorsPanel.innerText = 'Erro inesperado, tente novamente mais tarde';
                 return;
               }
