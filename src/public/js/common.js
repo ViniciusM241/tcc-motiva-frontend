@@ -370,8 +370,8 @@ function modalChat(chat) {
   const handleMessage = (message) => {
     return message
       .replace(/\n/g, '<br>')
-      .replace(/\*(.*){1}\*/g, '<strong>$1</strong>')
-      .replace(/\_(.*){1}\_/g, '<em>$1</em>');
+      .replace(/\*([^*]+){1}\*/g, '<strong>$1</strong>')
+      .replace(/\_([^*]+){1}\_/g, '<em>$1</em>');
   };
 
   const createChatRoll = (chat) => {
