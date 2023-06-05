@@ -37,7 +37,7 @@ const masks = {
 
 function createTable(element, config) {
   if (!config.columns) throw new Error('Missing columns');
-  if (!config.data) throw new Error('Missing data');
+  if (typeof config.data !== 'object') throw new Error('Missing data');
   if (!config.total) throw new Error('Missing total');
   if (!config.filters) throw new Error('Missing filters');
 
