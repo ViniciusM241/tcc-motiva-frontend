@@ -149,3 +149,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
   fetchPhrases();
 });
+
+function validatePhrase({ text, author }) {
+  let isValid = true;
+
+  if (!text.value) {
+    generateError(text, 'Digite a frase');
+    isValid = false;
+  } else {
+    clearError(text);
+  }
+
+  if (!author.value) {
+    generateError(author, 'Digite o autor');
+    isValid = false;
+  } else {
+    clearError(author);
+  }
+
+  return isValid;
+}
